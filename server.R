@@ -53,12 +53,12 @@ server <- function(input, output,session) {
     writeImage(oi, "rs_img.jpeg", quality=100)
     filename <- normalizePath(file.path('./',paste0('rs_img','.jpeg')))
     list(src = filename, width = input$w ,height = input$h)
-  }, deleteFile = FALSE)
+  }, deleteFile = TRUE) # commit. made F to T
   
   recv_img <- reactive({
     req(up_img())
-    req(resized_im())  # new commit
-    im <- img_check(resized_im())
+    #req(resized_im())  # new commit
+    # im <- img_check(resized_im())
     #show_recov_img(im, input$k)
     return(show_recov_img(resized_im(), input$k)) # added in commit
   })
