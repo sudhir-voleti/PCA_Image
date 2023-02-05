@@ -57,6 +57,7 @@ server <- function(input, output,session) {
   
   recv_img <- reactive({
     req(up_img())
+    req(resized_im())  # new commit
     im <- img_check(resized_im())
     #show_recov_img(im, input$k)
     return(show_recov_img(im, input$k)) # added in commit
