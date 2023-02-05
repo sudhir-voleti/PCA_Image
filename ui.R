@@ -41,7 +41,7 @@ shinyUI(fluidPage(
                 
                      
             ),
-            tabPanel("Factorizing Pixel Matrices", value=1,
+            tabPanel("Factorizing Pixel Matrices", value=2,
                      h4("Resized & Grayscale Image"),
                      imageOutput("rs_img"),
                      h4("Gray Scale Image Dimensions (H X W)"),
