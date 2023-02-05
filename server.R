@@ -66,8 +66,8 @@ output$rs_img1 <- renderPlot({
 
   
   recv_img <- reactive({
-    req(up_img())
-    #req(resized_im())  # new commit
+    #req(up_img())
+    req(resized_im())  # new commit
     # im <- img_check(resized_im())
     #show_recov_img(im, input$k)
     return(show_recov_img(resized_im(), input$k)) # added in commit
@@ -83,7 +83,7 @@ output$rs_img1 <- renderPlot({
   
   
   output$pca_img <- renderPlot({
-    req(up_img())
+    #req(up_img())
     # define list of components & run
    # kList = c(1, 2, 3, 4, 5, 10)
        # for (i0 in 1:length(kList)){ show_recov_img(resized_gray, kList[i0])}
