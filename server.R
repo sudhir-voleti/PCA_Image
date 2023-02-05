@@ -48,12 +48,22 @@ server <- function(input, output,session) {
   })
   
   
-  output$rs_img <- renderImage({
-    oi <- resized_im()
-    writeImage(oi, "rs_img.jpeg", quality=100)
-    filename1 <- normalizePath(file.path('./',paste0('rs_img','.jpeg')))
-    list(src = filename1, width = 200, height = 200) # width = input$w ,height = input$h
-  }, deleteFile = FALSE)  
+ # output$rs_img <- renderImage({
+ #   oi <- resized_im()
+ #   writeImage(oi, "rs_img.jpeg", quality=100)
+ #   filename1 <- normalizePath(file.path('./',paste0('rs_img','.jpeg')))
+ #   list(src = filename1, width = 200, height = 200) # width = input$w ,height = input$h
+ # }, deleteFile = FALSE)  
+
+output$rs_img1 <- renderPlot({
+    #oi <- resized_im()
+    #writeImage(oi, "rs_img.jpeg", quality=100)
+    #filename1 <- normalizePath(file.path('./',paste0('rs_img','.jpeg')))
+    #list(src = filename1, width = 200, height = 200) # width = input$w ,height = input$h
+    rs_as_raster = as.raster(resized_im())
+    plot(rs_as_raster, main = "resized image") 
+  })  
+
   
   recv_img <- reactive({
     req(up_img())
