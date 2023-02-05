@@ -58,7 +58,8 @@ server <- function(input, output,session) {
   recv_img <- reactive({
     req(up_img())
     im <- img_check(resized_im())
-    show_recov_img(im, input$k)
+    #show_recov_img(im, input$k)
+    return(show_recov_img(im, input$k)) # added in commit
   })
   
   output$pca_dimss <- renderPrint({
