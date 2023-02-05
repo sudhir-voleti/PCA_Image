@@ -45,7 +45,7 @@ shinyUI(fluidPage(
 
                      h4("Resized & Grayscale Image"),
                      #imageOutput("rs_img"),
-                     plotOutput("rs_img1")
+                     plotOutput("rs_img1"),
                      h4("Gray Scale Image Dimensions (H X W)"),
                      verbatimTextOutput("gray_dimss"),
                      hr(),
