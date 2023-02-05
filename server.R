@@ -60,7 +60,7 @@ server <- function(input, output,session) {
     req(resized_im())  # new commit
     im <- img_check(resized_im())
     #show_recov_img(im, input$k)
-    return(show_recov_img(im, input$k)) # added in commit
+    return(show_recov_img(resized_im(), input$k)) # added in commit
   })
   
   output$pca_dimss <- renderPrint({
