@@ -51,8 +51,8 @@ server <- function(input, output,session) {
   output$rs_img <- renderImage({
     oi <- resized_im()
     writeImage(oi, "rs_img.jpeg", quality=100)
-    filename <- normalizePath(file.path('./',paste0('rs_img','.jpeg')))
-    list(src = filename, width = input$w ,height = input$h)
+    filename1 <- normalizePath(file.path('./',paste0('rs_img','.jpeg')))
+    list(src = filename1, width = input$w ,height = input$h)
   }, deleteFile = TRUE) # commit. made F to T
   
   recv_img <- reactive({
