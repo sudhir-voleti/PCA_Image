@@ -28,7 +28,7 @@ server <- function(input, output,session) {
   resized_im <- reactive({
     req(up_img())
     im <- up_img()
-    resized_im = resizeImage(im, width = input$w, height = input$h, method = 'bilinear')
+    resized_im = resizeImage(im, width = input$w, height = input$h, method = 'bilinear', normalize_pixels=TRUE)
     resized_im = img_check(resized_im)
     if(input$bw){
       im_gray = rgb_2gray(resized_im)
