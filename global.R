@@ -50,7 +50,7 @@ show_recov_img <- function(im_gray, k=50){
   
   a1 = as.raster(recov_mat1)
   #title1 = paste0("with ", k, " components.")
-  return(list(a1,recov_mat))
+  return(list(a1,recov_mat1))  # inserted the last '1' in commit
   #plot(a1);title(title1)  # returns raster plot & title
   
 }  # func ends
